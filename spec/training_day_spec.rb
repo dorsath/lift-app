@@ -2,8 +2,10 @@ require 'spec_helper'
 
 
 describe TrainingDay do
+
+  let(:lifter) { double(:lifter) }
+
   context ".creation" do
-    let(:lifter) { double(:lifter) }
     before do
       Date.stub(:today) { "Todays date" }
     end
@@ -18,6 +20,13 @@ describe TrainingDay do
 
     it "requires a lifter" do
       expect { TrainingDay.new }.to raise_exception
+    end
+  end
+
+  context ".adding exercises" do
+    subject { TrainingDay.new(lifter: lifter) }
+    it "has many exercises" do
+      subject.exercises.should eq([])
     end
   end
 
