@@ -1,1 +1,1 @@
-#require 'l
+require_relative '../lib/lifter.rb'
