@@ -1,3 +1,4 @@
+require 'date'
 class TrainingDay
 
   attr_accessor :date, :exercises
