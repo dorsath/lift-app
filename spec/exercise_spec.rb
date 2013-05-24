@@ -13,4 +13,22 @@ describe Exercise do
     expect { Exercise.new }.to raise_exception("NoExerciseTypeGiven")
   end
 
+  context ".sets" do
+    subject { Exercise.new(type: :squat) }
+    it "has a set of weight numbers" do
+      subject.sets.should eq([])
+    end
+
+    it "requires sets to an array of numbers" do
+      expect { subject.sets << ["h", "e", "l", "l", "o"] }.to raise_exception("ExerciseSetsWeightValuesNeedToBeNumeric")
+      expect { subject.sets << "hello world" }.to raise_exception("ExerciseSetsNeedToBeAnArray")
+    end
+
+    it "knows the total weight of the whole exercise" do
+      subject.sets << [30, 30, 30, 30]
+      subject.sets << [50, 50, 50, 50]
+      subject.weight.should eq(320)
+    end
+  end
+
 end
