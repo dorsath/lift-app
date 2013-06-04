@@ -8,3 +8,9 @@ end
 
 task :default => :spec
 
+
+namespace :test do
+  task :ci do
+    Rake::Task['spec'].invoke(":99")
+  end
+end
