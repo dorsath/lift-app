@@ -30,9 +30,4 @@ describe Exercise do
       subject.weight.should eq(320)
     end
   end
-
-  it "should fail" do
-    5.should eql(3)
-  end
-
 end
