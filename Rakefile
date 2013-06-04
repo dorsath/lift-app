@@ -10,7 +10,7 @@ end
 task :default => :spec
 
 
-RSpec::Core::RakeTask.new(:test_spec)
+RSpec::Core::RakeTask.new(:test_spec) do |t|
 
 namespace :test do
   task :ci do

@@ -31,5 +31,8 @@ describe Exercise do
     end
   end
 
+  it "should fail now" do
+    5.should eql(3)
+  end
 
 end
