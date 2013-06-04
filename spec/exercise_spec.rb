@@ -30,4 +30,6 @@ describe Exercise do
       subject.weight.should eq(320)
     end
   end
+
+
 end
