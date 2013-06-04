@@ -6,11 +6,16 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 
+
 task :default => :spec
 
 
+RSpec::Core::RakeTask.new(:test_spec)
+
 namespace :test do
   task :ci do
-    Rake::Task['spec'].invoke(":99")
+    Rake::Task['test_spec'].invoke(":99")
   end
 end
+
+
